@@ -1,0 +1,36 @@
+/* Modale — version AVANT (problèmes volontaires)
+   - Ouverture automatique forcée après 2 secondes, sans action de l'utilisateur
+   - Pas de role="dialog"/aria-modal, pas de gestion du focus (échec 4.1.2, 2.4.3)
+   - Bouton de fermeture = icône seule dans un <span onclick>, non focalisable (échec 2.1.1)
+   - Touche Échap sans effet, contenu de la page reste actif derrière la modale
+*/
+.modal-before-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  align-items: center; justify-content: center;
+  z-index: 200;
+}
+.modal-before-overlay.is-open { display: flex; }
+.modal-before-box {
+  background: #fff;
+  border-radius: 8px;
+  padding: var(--space-3);
+  max-width: 420px;
+  width: 90%;
+  position: relative;
+}
+.modal-before-box .close-icon {
+  position: absolute;
+  top: 0.75rem; right: 0.75rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+  color: #666;
+}
+.modal-before-box input[type="email"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.75rem 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

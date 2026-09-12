@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ETML — Portes ouvertes &amp; inscriptions (version APRÈS)</title>
+<link rel="icon" href="images/etml/etml_favicon.ico">
+<link rel="stylesheet" href="styles/etml-theme.css">
+<link rel="stylesheet" href="styles/etml-menu-after.css">
+<link rel="stylesheet" href="styles/etml-hero-after.css">
+<link rel="stylesheet" href="styles/etml-events-after.css">
+<link rel="stylesheet" href="styles/etml-form-after.css">
+<link rel="stylesheet" href="styles/etml-modal-after.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+<div class="page-banner good" role="region" aria-label="Bandeau d'information pédagogique">Version « APRÈS » — même interface, corrigée selon les WCAG 2.2 (AA). Voir <a href="erreurs.html">la liste des erreurs corrigées</a>.</div>
+
+<div id="page-wrapper">
+  <header class="site-header">
+    <nav class="menu-after" aria-label="Navigation principale">
+      <div class="container">
+        <a href="index.html" style="display:flex;align-items:center;gap:.5rem;text-decoration:none;">
+          <img src="images/etml/etml_logo_simple_white.svg" alt="ETML — Ecole Technique - Ecole des Métiers de Lausanne" height="36">
+          <span class="logo-text">Accessible</span>
+        </a>
+        <ul class="menu-items">
+          <li><a href="apres.html" aria-current="page">Accueil</a></li>
+          <li>
+            <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="sous-menu-formations">
+              Formations <span class="chevron" aria-hidden="true">▾</span>
+            </button>
+            <ul class="sous-menu" id="sous-menu-formations" hidden>
+              <li><a href="#">Informaticien·ne</a></li>
+              <li><a href="#">Automaticien·ne</a></li>
+              <li><a href="#">Électronicien·ne</a></li>
+              <li><a href="#">Ébéniste</a></li>
+              <li><a href="#">Mécanicien·ne</a></li>
+            </ul>
+          </li>
+          <li><a href="#actualites">Actualités</a></li>
+          <li><a href="#inscription">Inscription</a></li>
+          <li><a href="avant.html" class="cta">Voir la version avec erreurs</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section aria-roledescription="carrousel" aria-label="Filières de l'ETML" class="hero-after">
+      <div class="slide is-active">
+        <img src="images/etml/illustrations/filiere-informatique.jpg" alt="Étudiant concentré devant un poste de travail à double écran, en train de développer du code">
+        <div class="caption">
+          <p style="margin:0;font-size:1.4rem;">Filière Informaticien·ne</p>
+          <p>Développement logiciel, réseaux et systèmes.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="images/etml/illustrations/filiere-automatique.jpg" alt="Étudiante pilotant le pupitre de commande numérique d'une machine-outil en atelier">
+        <div class="caption">
+          <p style="margin:0;font-size:1.4rem;">Filière Automaticien·ne</p>
+          <p>Conception et maintenance de systèmes automatisés.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="images/etml/illustrations/filiere-electronique.jpg" alt="Étudiant soudant un composant sur une carte électronique à l'aide d'un tournevis de précision">
+        <div class="caption">
+          <p style="margin:0;font-size:1.4rem;">Filière Électronicien·ne</p>
+          <p>Conception de circuits et systèmes électroniques.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="images/etml/illustrations/filiere-ebenisterie.jpg" alt="Étudiant encollant une pièce de bois à l'atelier d'ébénisterie">
+        <div class="caption">
+          <p style="margin:0;font-size:1.4rem;">Filière Ébéniste</p>
+          <p>Travail du bois et création de mobilier sur mesure.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="images/etml/illustrations/filiere-mecanique.jpg" alt="Étudiant en train d'inspecter le moteur d'un véhicule, capot ouvert">
+        <div class="caption">
+          <p style="margin:0;font-size:1.4rem;">Filière Mécanicien·ne</p>
+          <p>Diagnostic, réparation et entretien de véhicules.</p>
+        </div>
+      </div>
+
+      <div class="arrow-wrap">
+        <button type="button" class="arrow prev" aria-label="Filière précédente">&#10094;</button>
+        <button type="button" class="arrow next" aria-label="Filière suivante">&#10095;</button>
+      </div>
+      <div class="hero-controls">
+        <button type="button" class="play-pause" aria-pressed="true" aria-label="Mettre le diaporama en pause">⏸</button>
+        <div class="dots" role="group" aria-label="Choisir une filière à afficher">
+          <button type="button" aria-current="true" aria-label="Afficher la filière Informaticien·ne"></button>
+          <button type="button" aria-current="false" aria-label="Afficher la filière Automaticien·ne"></button>
+          <button type="button" aria-current="false" aria-label="Afficher la filière Électronicien·ne"></button>
+          <button type="button" aria-current="false" aria-label="Afficher la filière Ébéniste"></button>
+          <button type="button" aria-current="false" aria-label="Afficher la filière Mécanicien·ne"></button>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <h1 style="text-align:center;margin:2rem 0 0;">Portes ouvertes ETML — Inscrivez-vous !</h1>
+      <p style="text-align:center;max-width:60ch;margin:0.5rem auto 2rem;">Découvrez nos filières techniques lors de nos prochaines portes ouvertes et inscrivez-vous à notre newsletter.</p>
+      <div style="text-align:center;margin-bottom:2rem;">
+        <button type="button" id="open-newsletter" class="btn">S'abonner à la newsletter ETML</button>
+      </div>
+    </div>
+
+    <section id="actualites">
+      <div class="container">
+        <h2 style="text-align:center;">Actualités ETML</h2>
+        <div class="events-after-grid">
+          <article class="card">
+            <img src="images/etml/illustrations/actu-portes-ouvertes.jpg" alt="">
+            <div class="body">
+              <h3>Portes ouvertes 2026</h3>
+              <time datetime="2026-03-14">14 mars 2026</time>
+              <p>Venez rencontrer nos formateurs et découvrir les ateliers.</p>
+              <a class="card-link" href="#">En savoir plus sur les portes ouvertes 2026</a>
+            </div>
+          </article>
+          <article class="card">
+            <img src="images/etml/illustrations/actu-concours-robotique.jpg" alt="">
+            <div class="body">
+              <h3>Concours de robotique</h3>
+              <time datetime="2026-05-02">2 mai 2026</time>
+              <p>Nos étudiant·e·s en Automatique affrontent d'autres écoles romandes.</p>
+              <a class="card-link" href="#">En savoir plus sur le concours de robotique</a>
+            </div>
+          </article>
+          <article class="card">
+            <img src="images/etml/illustrations/actu-remise-diplomes.jpg" alt="">
+            <div class="body">
+              <h3>Remise des diplômes</h3>
+              <time datetime="2026-06-28">28 juin 2026</time>
+              <p>Cérémonie de fin d'année pour les nouveaux·elles diplômé·e·s.</p>
+              <a class="card-link" href="#">En savoir plus sur la remise des diplômes</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" id="inscription">
+      <div class="container">
+        <h2 style="text-align:center;">Formulaire d'inscription</h2>
+        <form id="form-apres" class="form-after" novalidate>
+          <div class="error-summary" role="alert" tabindex="-1" hidden>
+            <h2>Le formulaire contient des erreurs</h2>
+            <ul></ul>
+          </div>
+          <div class="success-message" role="status" tabindex="-1" hidden>
+            Merci ! Votre demande d'inscription a bien été envoyée.
+          </div>
+
+          <div class="field">
+            <label for="af-nom">Nom <span class="hint">(obligatoire)</span></label>
+            <input type="text" id="af-nom" name="nom" required>
+            <p class="field-error" id="af-nom-error" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="af-prenom">Prénom</label>
+            <input type="text" id="af-prenom" name="prenom">
+          </div>
+
+          <div class="field">
+            <label for="af-email">Adresse e-mail <span class="hint">(obligatoire)</span></label>
+            <input type="email" id="af-email" name="email" required>
+            <p class="field-error" id="af-email-error" hidden></p>
+          </div>
+
+          <div class="field">
+            <fieldset>
+              <legend>Filière souhaitée</legend>
+              <div class="radios">
+                <label><input type="radio" name="filiere" value="info"> Informaticien·ne</label>
+                <label><input type="radio" name="filiere" value="auto"> Automaticien·ne</label>
+                <label><input type="radio" name="filiere" value="elec"> Électronicien·ne</label>
+                <label><input type="radio" name="filiere" value="ebe"> Ébéniste</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="field">
+            <label for="af-message">Message</label>
+            <textarea id="af-message" name="message" rows="3"></textarea>
+          </div>
+
+          <div class="field captcha-question">
+            <label for="af-captcha">Question anti-robot : combien font 3 + 4 ? <span class="hint">(obligatoire)</span></label>
+            <input type="text" id="af-captcha" name="captcha" inputmode="numeric" required>
+            <p class="field-error" id="af-captcha-error" hidden></p>
+          </div>
+
+          <button type="submit">Envoyer ma demande</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>
+        <p><strong>ETML Accessible</strong> — Démo pédagogique WCAG 2.2, à usage interne de formation.</p>
+      </div>
+      <nav aria-label="Liens du pied de page">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="avant.html">Avant</a></li>
+          <li><a href="erreurs.html">Liste des erreurs</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</div>
+
+<div class="modal-after-overlay">
+  <div class="modal-after-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button type="button" class="modal-close"><span aria-hidden="true">✕</span> Fermer</button>
+    <h2 id="modal-title">Ne manquez rien !</h2>
+    <p>Inscrivez-vous à notre newsletter pour suivre l'actualité de l'ETML.</p>
+    <form>
+      <label for="modal-email">Votre adresse e-mail</label>
+      <input type="email" id="modal-email" name="modal-email" required>
+      <button type="submit">S'abonner</button>
+    </form>
+  </div>
+</div>
+
+<script src="scripts/etml-menu-after.js"></script>
+<script src="scripts/etml-hero-after.js"></script>
+<script src="scripts/etml-form-after.js"></script>
+<script src="scripts/etml-modal-after.js"></script>
+</body>
+</html>

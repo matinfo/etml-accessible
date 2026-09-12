@@ -1,0 +1,22 @@
+/* Actualités — version AVANT (problèmes volontaires)
+   - Cartes cliquables via <div onclick>, jamais focalisables/activables au clavier (échec 2.1.1/4.1.2)
+   - Lien "cliquez ici" répété identique sur toutes les cartes (échec 2.4.4 lien hors contexte)
+   - Hiérarchie de titres qui saute (h1 puis h4) — échec 1.3.1
+*/
+.events-before-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-3);
+}
+.events-before-grid .card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  cursor: pointer; /* look & feel de bouton, mais ce n'est qu'un <div> */
+}
+.events-before-grid .card img { width: 100%; height: 160px; object-fit: cover; }
+.events-before-grid .card .body { padding: var(--space-2); }
+.events-before-grid .card h4 { margin: 0 0 0.4rem; font-size: 1.05rem; }
+.events-before-grid .card .date { color: #999; font-size: 0.85rem; }
+.events-before-grid .card a { color: var(--color-primary); font-size: 0.9rem; }

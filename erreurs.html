@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liste des erreurs — ETML Accessible</title>
+<link rel="icon" href="images/etml/etml_favicon.ico">
+<link rel="stylesheet" href="styles/etml-theme.css">
+<style>
+  table { width: 100%; border-collapse: collapse; margin-bottom: var(--space-4); background: var(--surface); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-card); }
+  caption { text-align: left; font-weight: 700; font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--text); }
+  th, td { text-align: left; padding: 0.65rem 0.9rem; border-bottom: 1px solid rgba(5,0,56,0.12); vertical-align: top; }
+  th { background: var(--color-primary-light); }
+  tbody tr:nth-child(even) { background: rgba(5,0,56,0.03); }
+  .gravite { font-weight: 700; white-space: nowrap; }
+  .gravite.critique { color: var(--color-error); }
+  .gravite.moyenne { color: #8a6d00; }
+  @media (prefers-color-scheme: dark) { .gravite.moyenne { color: #f0c419; } }
+  .criteria { font-family: monospace; white-space: nowrap; }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+<header class="site-header">
+  <div class="container">
+    <a class="site-logo" href="index.html">
+      <img src="images/etml/etml_logo_simple_white.svg" alt="ETML — Ecole Technique - Ecole des Métiers de Lausanne">
+      <span class="logo-text">Accessible</span>
+    </a>
+    <nav aria-label="Navigation principale">
+      <ul style="list-style:none; display:flex; gap:1rem; margin:0; padding:0;">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="avant.html">Avant</a></li>
+        <li><a href="apres.html">Après</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+  <div class="container">
+    <h1>Liste des erreurs d'accessibilité corrigées</h1>
+    <p>Ce tableau récapitule, composant par composant, les problèmes volontairement introduits dans la
+    <a href="avant.html">version « Avant »</a>, le critère WCAG 2.2 concerné, leur gravité et la
+    correction appliquée dans la <a href="apres.html">version « Après »</a>.</p>
+
+    <table>
+      <caption>Menu de navigation</caption>
+      <thead>
+        <tr><th scope="col">Problème (Avant)</th><th scope="col">Critère WCAG</th><th scope="col">Gravité</th><th scope="col">Correction (Après)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Texte des liens gris clair sur fond blanc, contraste insuffisant</td>
+          <td class="criteria">1.4.3 (AA)</td>
+          <td class="gravite critique">Critique</td>
+          <td>Texte en couleur « Stratos » sur fond blanc (contraste ≥ 11:1)</td>
+        </tr>
+        <tr>
+          <td>Focus clavier supprimé (<code>outline: none</code>) sans remplacement</td>
+          <td class="criteria">2.4.7 (AA)</td>
+          <td class="gravite critique">Critique</td>
+          <td>Indicateur de focus visible et épais sur tous les éléments interactifs</td>
+        </tr>
+        <tr>
+          <td>Sous-menu « Formations » affiché uniquement au survol souris (<code>:hover</code>)</td>
+          <td class="criteria">2.1.1 (A)</td>
+          <td class="gravite critique">Critique</td>
+          <td>Sous-menu piloté par un <code>&lt;button aria-expanded&gt;</code>, ouvrable/fermable au clavier</td>
+        </tr>
+        <tr>
+          <td>Navigation non structurée en <code>&lt;nav&gt;</code> (simple <code>&lt;div&gt;</code>)</td>
+          <td class="criteria">1.3.1 (A) / 4.1.2 (A)</td>
+          <td class="gravite moyenne">Moyenne</td>
+          <td>Repère <code>&lt;nav aria-label&gt;</code> identifiable par les technologies d'assistance</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table>
+      <caption>Bandeau / carrousel des filières</caption>
+      <thead>
+        <tr><th scope="col">Problème (Avant)</th><th scope="col">Critère WCAG</th><th scope="col">Gravité</th><th scope="col">Correction (Après)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Diaporama automatique sans aucun moyen de le mettre en pause</td>
+          <td class="criteria">2.2.2 (A)</td>
+          <td class="gravite critique">Critique</td>
+          <td>Bouton lecture/pause visible, respecte aussi <code>prefers-reduced-motion</code></td>
+        </tr>
+        <tr>
+          <td>Flèches précédent/suivant en <code>&lt;div onclick&gt;</code>, non focalisables au clavier</td>
+          <td class="criteria">2.1.1 (A) / 4.1.2 (A)</td>
+          <td class="gravite critique">Critique</td>
+          <td>Vrais <code>&lt;button&gt;</code> avec libellé accessible, focalisables et activables au clavier</td>
+        </tr>
+        <tr>
+          <td>Texte alternatif générique <code>alt="image"</code> sur les visuels</td>
+          <td class="criteria">1.1.1 (A)</td>
+          <td class="gravite critique">Critique</td>
+          <td>Alternative textuelle descriptive propre à chaque filière</td>
+        </tr>
+        <tr>
+          <td>Légende en texte clair directement sur la photo, sans habillage, contraste insuffisant</td>
+          <td class="criteria">1.4.3 (AA)</td>
+          <td class="gravite critique">Critique</td>
+          <td>Voile sombre (<em>scrim</em>) derrière le texte pour garantir le contraste</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table>
+      <caption>Actualités</caption>
+      <thead>
+        <tr><th scope="col">Problème (Avant)</th><th scope="col">Critère WCAG</th><th scope="col">Gravité</th><th scope="col">Correction (Après)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cartes cliquables via <code>&lt;div onclick&gt;</code>, inutilisables au clavier</td>
+          <td class="criteria">2.1.1 (A) / 4.1.2 (A)</td>
+          <td class="gravite critique">Critique</td>
+          <td>Une seule vraie balise <code>&lt;a&gt;</code> par carte, agrandie visuellement (zone cliquable étendue)</td>
+        </tr>
+        <tr>
+          <td>Lien « Cliquez ici » identique et hors contexte sur chaque carte</td>
+          <td class="criteria">2.4.4 (A) / 2.4.9 (AAA)</td>
+          <td class="gravite moyenne">Moyenne</td>
+          <td>Intitulé de lien explicite et unique par actualité</td>
+        </tr>
+        <tr>
+          <td>Hiérarchie de titres incohérente (saut direct de <code>h1</code> à <code>h4</code>)</td>
+          <td class="criteria">1.3.1 (A)</td>
+          <td class="gravite moyenne">Moyenne</td>
+          <td>Hiérarchie logique : <code>h1</code> &gt; <code>h2</code> (section) &gt; <code>h3</code> (carte)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table>
+      <caption>Formulaire d'inscription</caption>
+      <thead>
+        <tr><th scope="col">Problème (Avant)</th><th scope="col">Critère WCAG</th><th scope="col">Gravité</th><th scope="col">Correction (Après)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Champs identifiés uniquement par un <em>placeholder</em>, aucun <code>&lt;label&gt;</code></td>
+          <td class="criteria">1.3.1 (A) / 3.3.2 (A)</td>
+          <td class="gravite critique">Critique</td>
+          <td><code>&lt;label for&gt;</code> explicite et toujours visible pour chaque champ</td>
+        </tr>
+        <tr>
+          <td>Boutons radio « Filière souhaitée » non regroupés (pas de <code>fieldset</code>/<code>legend</code>)</td>
+          <td class="criteria">1.3.1 (A)</td>
+          <td class="gravite critique">Critique</td>
+          <td>Regroupement sémantique avec <code>&lt;fieldset&gt;&lt;legend&gt;</code></td>
+        </tr>
+        <tr>
+          <td>Erreur de saisie signalée uniquement par une bordure rouge, sans texte</td>
+          <td class="criteria">1.4.1 (A) / 3.3.1 (A)</td>
+          <td class="gravite critique">Critique</td>
+          <td>Résumé d'erreurs + message texte par champ (icône + texte, <code>aria-invalid</code>)</td>
+        </tr>
+        <tr>
+          <td>CAPTCHA image déformée, sans alternative textuelle ou sonore</td>
+          <td class="criteria">1.1.1 (A)</td>
+          <td class="gravite critique">Critique</td>
+          <td>Question anti-robot en texte simple, accessible au clavier et au lecteur d'écran</td>
+        </tr>
+        <tr>
+          <td>Bouton d'envoi = <code>&lt;div onclick&gt;</code>, non accessible au clavier</td>
+          <td class="criteria">2.1.1 (A) / 4.1.2 (A)</td>
+          <td class="gravite critique">Critique</td>
+          <td>Vrai <code>&lt;button type="submit"&gt;</code> dans un <code>&lt;form&gt;</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table>
+      <caption>Fenêtre modale (newsletter)</caption>
+      <thead>
+        <tr><th scope="col">Problème (Avant)</th><th scope="col">Critère WCAG</th><th scope="col">Gravité</th><th scope="col">Correction (Après)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ouverture automatique forcée après 2 secondes, sans action de l'utilisateur</td>
+          <td class="criteria">2.2.4 (AAA) / 3.2.5 (AAA)</td>
+          <td class="gravite moyenne">Moyenne</td>
+          <td>Ouverture uniquement sur clic volontaire d'un bouton visible</td>
+        </tr>
+        <tr>
+          <td>Aucune gestion du focus à l'ouverture, pas de piège de focus</td>
+          <td class="criteria">2.4.3 (A)</td>
+          <td class="gravite critique">Critique</td>
+          <td>Focus déplacé dans la modale à l'ouverture, piégé (Tab/Shift+Tab), restitué à la fermeture</td>
+        </tr>
+        <tr>
+          <td>Icône de fermeture = <code>&lt;span onclick&gt;</code>, non focalisable ; Échap sans effet</td>
+          <td class="criteria">2.1.1 (A) / 2.1.2 (A)</td>
+          <td class="gravite critique">Critique</td>
+          <td>Bouton de fermeture réel, libellé visible, fermeture possible via Échap</td>
+        </tr>
+        <tr>
+          <td>Pas de <code>role="dialog"</code>/<code>aria-modal</code>, rôle non annoncé</td>
+          <td class="criteria">4.1.2 (A)</td>
+          <td class="gravite critique">Critique</td>
+          <td><code>role="dialog"</code> <code>aria-modal="true"</code> <code>aria-labelledby</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:2rem;">💡 <strong>À retenir</strong> : les outils automatiques (axe, Lighthouse…)
+    ne détectent qu'une partie de ces problèmes (environ 30 à 50 % selon les études). Beaucoup — labels
+    absents mais remplacés par un <em>placeholder</em>, pièges de focus, menus inutilisables au clavier —
+    ne sont révélés que par un test manuel au clavier et/ou avec un lecteur d'écran (NVDA, VoiceOver, JAWS).</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p><strong>ETML Accessible</strong> — Démo pédagogique WCAG 2.2, à usage interne de formation.</p>
+    <nav aria-label="Liens du pied de page">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="avant.html">Avant</a></li>
+        <li><a href="apres.html">Après</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

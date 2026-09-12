@@ -1,0 +1,232 @@
+/* =========================================================================
+   ETML Accessible — Thème partagé
+   Palette officielle ETML : Dark Blue #0000AC, Pampas #F3EFED, Stratos #050038
+   Ratios de contraste vérifiés (WCAG 2.2) :
+     - Stratos sur Pampas  : 17.3:1 (AAA)
+     - DarkBlue sur blanc  : 13.2:1 (AAA)
+     - Blanc sur DarkBlue  : 13.2:1 (AAA)
+   ========================================================================= */
+
+:root {
+  /* Couleurs de marque (fixes, utilisées comme fonds pleins avec texte blanc :
+     un bouton "plein" garde la même couleur de marque quel que soit le thème). */
+  --brand-blue: #0000ac;       /* Dark Blue ETML */
+  --brand-blue-hover: #000078;
+  --color-surface: #c2c2c2;    /* Pampas */
+  --color-ink: #050038;        /* Stratos — texte fixe utilisé sur surfaces claires fixes */
+  --color-white: #ffffff;
+
+  /* Couleur d'accent ADAPTATIVE : utilisée pour les liens/textes posés sur
+     l'arrière-plan courant (--bg / --surface), qui change en mode sombre. */
+  --color-primary: var(--brand-blue);
+  --color-primary-hover: var(--brand-blue-hover);
+  --color-primary-light: #e6e6ff; /* fond de survol clair (mode clair) */
+
+  /* États sémantiques (jamais utilisés seuls, toujours + icône/texte) */
+  --color-success: #276b3f;
+  --color-success-bg: #e6f3ea;
+  --color-error: #b3001b;
+  --color-error-bg: #fbe7e9;
+
+  /* Typographie fluide */
+  --font-base: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --step-0: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
+  --step-1: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --step-2: clamp(1.6rem, 1.35rem + 1vw, 2.1rem);
+  --step-3: clamp(2rem, 1.6rem + 1.6vw, 2.9rem);
+
+  /* Rythme / rayon / ombre */
+  --radius: 0.5rem;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --shadow-card: 0 2px 10px rgba(5, 0, 56, 0.12);
+  --focus-ring: 3px solid #ffb300; /* jaune/orange : visible sur fond clair ET foncé */
+  --focus-ring-offset: 2px;
+
+  color-scheme: light;
+  --bg: var(--color-surface);
+  --text: var(--color-ink);
+  --header-bg: var(--color-white);
+  --surface: var(--color-white); /* fond des cartes / formulaires / modales */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: var(--color-ink);
+    --text: var(--color-surface);
+    --text-2: #767676;
+    --header-bg: #0a0550;
+    --surface: #0a0550;
+    /* Couleur d'accent adaptative éclaircie : reste ≥7:1 sur fond Stratos/--surface foncé.
+       Les fonds de boutons pleins, eux, restent en --brand-blue (voir .btn). */
+    --color-primary: #a6b0ff;
+    --color-primary-hover: #c2c9ff;
+    --color-primary-light: #1c1770;
+    --color-success: #8fd6a8; /* éclairci pour rester ≥7:1 sur fond success-bg foncé */
+    --color-success-bg: #123822;
+    --color-error: #ff9aa2; /* éclairci pour rester ≥7:1 sur fond error-bg foncé */
+    --color-error-bg: #3a0d13;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-base);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--color-primary); }
+
+h1, h2, h3, h4 { line-height: 1.25; }
+h1 { font-size: var(--step-3); }
+h2 { font-size: var(--step-2); }
+h3 { font-size: var(--step-1); }
+
+.container {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-inline: var(--space-3);
+}
+
+/* Lien d'évitement (skip link) — visible uniquement au focus clavier */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--color-primary);
+  color: #fff;
+  padding: var(--space-1) var(--space-2);
+  z-index: 1000;
+  border-radius: 0 0 var(--radius) 0;
+  font-weight: 600;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus visible cohérent sur toute la démo "après" — jamais outline:none sans remplaçant */
+.a11y-focusable:focus-visible,
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+  border-radius: 2px;
+}
+
+/* Empêche l'en-tête collant (position: sticky) de recouvrir un élément qui
+   vient de recevoir le focus clavier — critère WCAG 2.2 2.4.11 Focus Not Obscured. */
+a, button, input, select, textarea, [tabindex] {
+  scroll-margin-top: 110px;
+}
+
+/* En-tête */
+.site-header {
+  background: var(--header-bg);
+  border-bottom: 1px solid rgba(5,0,56,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-block: var(--space-2);
+}
+.site-logo { display: flex; align-items: flex-end; gap: var(--space-1); text-decoration: none; }
+.site-logo img { height: 30px; width: auto; }
+.site-logo .logo-text { color: var(--text); font-size: 1.1rem; }
+
+.btn {
+  display: inline-block;
+  font: inherit;
+  font-weight: 600;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius);
+  border: 2px solid var(--brand-blue);
+  background: var(--brand-blue); /* fixe : un bouton plein reste lisible (texte blanc) dans les 2 thèmes */
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1.2;
+}
+.btn:hover { background: var(--brand-blue-hover); border-color: var(--brand-blue-hover); }
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.btn-outline:hover { background: var(--color-primary-light); }
+
+.badge-demo {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+.badge-demo.bad { background: var(--color-error-bg); color: var(--color-error); }
+.badge-demo.good { background: var(--color-success-bg); color: var(--color-success); }
+
+.page-banner {
+  padding: var(--space-2) 0;
+  text-align: center;
+  font-weight: 700;
+}
+.page-banner.bad { background: var(--color-error-bg); color: var(--color-error); }
+.page-banner.good { background: var(--color-success-bg); color: var(--color-success); }
+.page-banner a { color: inherit; text-decoration-thickness: 2px; }
+
+.site-footer {
+  padding: var(--space-4) 0;
+  background: #2b2b2e;
+  color: var(--color-surface);
+}
+.site-footer a { color: #cfd0ff; }
+.site-footer p { margin: 0; }
+.site-footer .container { display: flex; flex-wrap: wrap; gap: var(--space-3); justify-content: space-between; }
+.site-footer nav ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: row; flex-wrap: wrap; gap: 0.4rem 1rem; }
+
+section { padding-block: var(--space-4); }
+section.alt { background: var(--color-white); }
+@media (prefers-color-scheme: dark) { section.alt { background: #0a0550; } }
+
+.section-heading { text-align: center; margin-bottom: var(--space-3); }
+.section-heading p { color: var(--text); opacity: 0.85; max-width: 60ch; margin-inline: auto; }

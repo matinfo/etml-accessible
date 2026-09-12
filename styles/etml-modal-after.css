@@ -1,0 +1,57 @@
+/* Modale — version APRÈS (corrigée)
+   - Déclenchement volontaire par l'utilisateur (bouton), jamais forcé automatiquement
+   - role="dialog" aria-modal="true", focus piégé et restitué à la fermeture
+   - Bouton de fermeture réel, avec libellé visible + accessible
+*/
+.modal-after-overlay {
+  position: fixed; inset: 0;
+  background: rgba(5,0,56,0.6);
+  display: none;
+  align-items: center; justify-content: center;
+  z-index: 200;
+}
+.modal-after-overlay.is-open { display: flex; }
+.modal-after-box {
+  background: var(--surface);
+  color: var(--text);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  max-width: 440px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(5,0,56,0.35);
+}
+.modal-after-box .modal-close {
+  position: absolute;
+  top: 0.75rem; right: 0.75rem;
+  background: transparent;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.modal-after-box .modal-close:hover { background: var(--color-primary-light); }
+.modal-after-box label { display: block; font-weight: 600; margin-bottom: 0.35rem; margin-top: 0.75rem; }
+.modal-after-box input[type="email"] {
+  width: 100%;
+  padding: 0.6rem;
+  border: 2px solid #767676;
+  border-radius: 6px;
+  font: inherit;
+}
+.modal-after-box button[type="submit"] {
+  margin-top: var(--space-2);
+  background: var(--brand-blue);
+  color: #fff;
+  border: 2px solid var(--brand-blue);
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+}

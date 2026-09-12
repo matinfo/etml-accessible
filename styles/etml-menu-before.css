@@ -1,0 +1,39 @@
+/* Menu — version AVANT (problèmes volontaires)
+   - Contraste insuffisant (texte gris clair sur blanc)
+   - outline supprimé sans remplacement (perte du focus visible)
+   - Sous-menu uniquement au survol souris (:hover), inutilisable au clavier
+*/
+.menu-before { background: #ffffff; border-bottom: 1px solid #eee; }
+.menu-before .container { display: flex; align-items: center; justify-content: space-between; padding-block: 0.75rem; }
+.menu-before .menu-items { list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0; }
+.menu-before .menu-items > li { position: relative; }
+.menu-before .menu-items a,
+.menu-before .menu-items span.link {
+  color: #cccccc; /* contraste insuffisant sur fond blanc (échec 1.4.3) */
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: inline-block;
+}
+.menu-before .menu-items a:focus,
+.menu-before .menu-items span.link:focus {
+  outline: none; /* échec 2.4.7 : aucun indicateur de focus visible */
+}
+.menu-before .sous-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  box-shadow: var(--shadow-card);
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  min-width: 220px;
+  z-index: 200;
+}
+/* Le sous-menu ne s'affiche qu'au survol souris : inaccessible au clavier et au tactile */
+.menu-before li:hover .sous-menu { display: block; }
+.menu-before .sous-menu li a { color: #cccccc; padding: 0.5rem 1rem; display: block; }
+.menu-before .cta { background: var(--color-primary); color: #fff !important; padding: 0.5rem 1rem; border-radius: 4px; }

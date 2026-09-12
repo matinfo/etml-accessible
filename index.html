@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ETML Accessible — Démo pédagogique WCAG</title>
+<meta name="description" content="Démonstration pédagogique comparant une interface non accessible et sa version corrigée, sur le thème de l'ETML.">
+<link rel="icon" href="images/etml/etml_favicon.ico">
+<link rel="stylesheet" href="styles/etml-theme.css">
+<style>
+  .hero-landing {
+    background: linear-gradient(135deg, var(--color-ink), var(--brand-blue));
+    color: #fff;
+    padding: var(--space-4) 0 calc(var(--space-4) * 1.3);
+    text-align: center;
+  }
+  .hero-landing p { max-width: 60ch; margin-inline: auto; opacity: 0.9; }
+  .cta-row { display: flex; gap: var(--space-2); justify-content: center; margin-top: var(--space-3); flex-wrap: wrap; }
+  .cards-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: var(--space-3); margin-top: var(--space-3); }
+  .cards-row .card { background: var(--surface); color: var(--text); border-radius: var(--radius); box-shadow: var(--shadow-card); padding: var(--space-3); }
+  .cards-row .card h3 { margin-top: 0; }
+  .criteria-list { columns: 2; column-gap: var(--space-3); }
+  @media (max-width: 640px) { .criteria-list { columns: 1; } }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="site-logo" href="index.html">
+      <img src="images/etml/etml_logo_simple_white.svg" alt="ETML — Ecole Technique - Ecole des Métiers de Lausanne" height="40">
+      <span class="logo-text">Accessible</span>
+    </a>
+    <nav aria-label="Navigation principale">
+      <ul style="list-style:none; display:flex; gap:1rem; margin:0; padding:0;">
+        <li><a href="avant.html">Avant</a></li>
+        <li><a href="apres.html">Après</a></li>
+        <li><a href="erreurs.html">Liste des erreurs</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+  <section class="hero-landing">
+    <div class="container">
+      <h1>Un même site, deux niveaux d'accessibilité</h1>
+      <p>Les deux pages ont exactement le même contenu, la même charte graphique ETML et la même
+      mise en page. Seule l'implémentation technique change — et c'est elle qui décide si une
+      personne en situation de handicap peut, ou non, utiliser le site.</p>
+      <div class="cta-row">
+        <a class="btn" style="background:#fff;color:var(--brand-blue);border-color:#fff;" href="avant.html">Voir la version « Avant »</a>
+        <a class="btn btn-outline" style="border-color:#fff;color:#fff;" href="apres.html">Voir la version « Après »</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-heading">
+        <h2>Pourquoi cette démo ?</h2>
+        <p>Ce dispositif pédagogique compare deux versions visuellement modernes d'un même site
+        fictif <strong>ETML Accessible</strong> : l'une truffée d'erreurs d'accessibilité courantes,
+        l'autre corrigée selon les WCAG 2.2 (niveau AA). L'objectif : apprendre à repérer et corriger
+        les problèmes d'accessibilité web les plus fréquents.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div>
+      <p><strong>ETML Accessible</strong> — Démo pédagogique WCAG 2.2, à usage interne de formation.</p>
+    </div>
+    <nav aria-label="Liens du pied de page">
+      <ul>
+        <li><a href="avant.html">Avant</a></li>
+        <li><a href="apres.html">Après</a></li>
+        <li><a href="erreurs.html">Liste des erreurs</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

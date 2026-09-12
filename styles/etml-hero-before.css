@@ -1,0 +1,32 @@
+/* Hero — version AVANT (problèmes volontaires)
+   - Diaporama en défilement automatique perpétuel, aucun moyen de le mettre en pause (échec 2.2.2)
+   - Flèches précédent/suivant en <div onclick>, non focalisables au clavier (échec 2.1.1)
+   - Texte de légende peu contrasté sur l'image (échec 1.4.3)
+*/
+.hero-before { position: relative; overflow: hidden; height: 420px; background: #000; }
+.hero-before .slide {
+  position: absolute; inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.hero-before .slide.is-active { opacity: 1; }
+.hero-before .slide img { width: 100%; height: 100%; object-fit: cover; }
+.hero-before .caption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 1.5rem 3rem;
+  color: #e2e2e2; /* faible contraste directement sur l'image, sans fond ni ombre */
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.hero-before .arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,0.6);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  font-size: 1.4rem;
+  user-select: none;
+}
+.hero-before .arrow.prev { left: 1rem; }
+.hero-before .arrow.next { right: 1rem; }

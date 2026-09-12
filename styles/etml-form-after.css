@@ -1,0 +1,76 @@
+/* Formulaire — version APRÈS (corrigée)
+   - Chaque champ a un <label for> explicite + indication "(obligatoire)" textuelle
+   - Regroupement radio via <fieldset><legend>
+   - Résumé d'erreurs (role="alert") + message inline par champ (icône + texte, jamais la couleur seule)
+   - Alternative textuelle au CAPTCHA visuel (question simple, accessible au clavier et lecteur d'écran)
+*/
+.form-after { max-width: 640px; margin-inline: auto; background: var(--surface); color: var(--text); padding: var(--space-3); border-radius: var(--radius); box-shadow: var(--shadow-card); }
+.form-after .field { margin-bottom: var(--space-3); }
+.form-after label { display: block; font-weight: 600; margin-bottom: 0.35rem; }
+.form-after .hint { font-weight: 400; opacity: 0.75; font-size: 0.85rem; }
+.form-after input[type="text"],
+.form-after input[type="email"],
+.form-after textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 2px solid #767676;
+  border-radius: 6px;
+  font: inherit;
+  color: var(--text);
+}
+.form-after input[aria-invalid="true"],
+.form-after textarea[aria-invalid="true"] {
+  border-color: var(--color-error);
+}
+.form-after .field-error {
+  display: flex;
+  align-items: start;
+  gap: 0.4rem;
+  color: var(--color-error);
+  font-size: 0.9rem;
+  margin-top: 0.35rem;
+  font-weight: 600;
+}
+.form-after .field-error[hidden] { display: none; }
+.form-after fieldset { border: 2px solid #ddd; border-radius: var(--radius); padding: var(--space-2); }
+.form-after legend { font-weight: 700; padding-inline: 0.4rem; }
+.form-after .radios { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.5rem; }
+.form-after .radios label { display: flex; align-items: center; gap: 0.4rem; font-weight: 400; cursor: pointer; }
+.form-after .radios input[type="radio"] { cursor: pointer; }
+
+.form-after .error-summary {
+  border: 2px solid var(--color-error);
+  background: var(--color-error-bg);
+  color: var(--color-error);
+  border-radius: var(--radius);
+  padding: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+.form-after .error-summary[hidden] { display: none; }
+.form-after .error-summary h2 { margin: 0 0 0.5rem; font-size: 1.1rem; }
+.form-after .error-summary ul { margin: 0; padding-left: 1.2rem; }
+.form-after .error-summary a { color: var(--color-error); font-weight: 700; }
+
+.form-after .captcha-question { background: var(--color-primary-light); border-radius: var(--radius); padding: var(--space-2); }
+
+.form-after button[type="submit"] {
+  background: var(--brand-blue);
+  color: #fff;
+  border: 2px solid var(--brand-blue);
+  padding: 0.65rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font: inherit;
+  cursor: pointer;
+}
+.form-after button[type="submit"]:hover { background: var(--brand-blue-hover); }
+
+.form-after .success-message {
+  border: 2px solid var(--color-success);
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  border-radius: var(--radius);
+  padding: var(--space-2);
+  font-weight: 600;
+}
+.form-after .success-message[hidden] { display: none; }
