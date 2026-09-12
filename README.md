@@ -54,8 +54,7 @@ génère aucune violation [axe-core](https://github.com/dequelabs/axe-core) sur 
 ## Usage
 
 Usage strictement interne / pédagogique. Le logo et le favicon ETML (dans `images/etml/`) sont la
-propriété de l'ETML — voir `images/etml/SOURCE.md`. Ne pas redistribuer publiquement sans
-autorisation de l'école.
+propriété de l'ETML. Ne pas redistribuer publiquement sans autorisation de l'école.
 
 Pour visualiser le site en local :
 
