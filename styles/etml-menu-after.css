@@ -25,6 +25,7 @@
 .menu-after .menu-items a[aria-current="page"] {
   font-weight: 700;
   background: var(--brand-blue);
+  color: var(--text-2);
 }
 .menu-after .menu-items a:hover,
 .menu-after .menu-toggle:hover { background: var(--brand-blue); }
@@ -43,8 +44,8 @@
   z-index: 20;
 }
 .menu-after .sous-menu[hidden] { display: none; }
-.menu-after .sous-menu li a { color: var(--text-2); padding: 0.6rem 1rem; display: block; }
-.menu-after .sous-menu li a:hover { color: var(--text); }
+.menu-after .sous-menu li a { color: #727272; padding: 0.6rem 1rem; display: block; }
+.menu-after .sous-menu li a:hover { color: var(--text-2); }
 .menu-after .menu-toggle .chevron { transition: transform 0.15s ease; }
 .menu-after .menu-toggle[aria-expanded="true"] .chevron { transform: rotate(180deg); }
 

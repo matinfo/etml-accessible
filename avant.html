@@ -5,12 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ETML — Portes ouvertes &amp; inscriptions (version AVANT)</title>
 <link rel="icon" href="images/etml/etml_favicon.ico">
+<script>(function(){try{var t=localStorage.getItem('etml-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <link rel="stylesheet" href="styles/etml-theme.css">
 <link rel="stylesheet" href="styles/etml-menu-before.css">
 <link rel="stylesheet" href="styles/etml-hero-before.css">
 <link rel="stylesheet" href="styles/etml-events-before.css">
 <link rel="stylesheet" href="styles/etml-form-before.css">
 <link rel="stylesheet" href="styles/etml-modal-before.css">
+<style>
+  /* Erreur volontaire : texte gris clair sur fond clair, contraste insuffisant.
+     Reste fixe même si le thème change (contrairement à var(--text)). */
+  body { color: #c2c2c2; }
+</style>
 </head>
 <body>
 <div class="page-banner bad">Version « AVANT » — cette page contient volontairement des erreurs d'accessibilité (démo pédagogique). Voir <a href="erreurs.html">la liste des erreurs</a>.</div>
@@ -67,13 +73,13 @@
   <div class="arrow next">&#10095;</div>
 </div>
 
-<h1 style="text-align:center;margin:2rem 0 0;">Portes ouvertes ETML — Inscrivez-vous !</h1>
+<h1 style="text-align:center;margin:2rem 0 0;color: #000078;">Portes ouvertes ETML — Inscrivez-vous !</h1>
 <p style="text-align:center;max-width:60ch;margin:0.5rem auto 2rem;color:#666;">Découvrez nos filières techniques lors de nos prochaines portes ouvertes et inscrivez-vous à notre newsletter.</p>
 
 <section id="actualites">
   <div class="container">
     <!-- Hiérarchie de titres incohérente : on saute directement à h4 -->
-    <h4 style="text-align:center;font-size:1.6rem;">Actualités ETML</h4>
+    <h4 style="text-align:center;font-size:1.6rem;color: #000078;">Actualités ETML</h4>
     <div class="events-before-grid">
       <div class="card" onclick="location.href='#'">
         <img src="images/etml/illustrations/actu-portes-ouvertes.jpg" alt="">
@@ -151,6 +157,10 @@
         <li><a href="erreurs.html">Liste des erreurs</a></li>
       </ul>
     </nav>
+    <button type="button" class="theme-toggle" aria-pressed="false">
+      <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+      <span class="theme-toggle-label">Mode sombre</span>
+    </button>
   </div>
 </footer>
 
@@ -168,5 +178,6 @@
 <script src="scripts/etml-hero-before.js"></script>
 <script src="scripts/etml-form-before.js"></script>
 <script src="scripts/etml-modal-before.js"></script>
+<script src="scripts/etml-theme-toggle.js"></script>
 </body>
 </html>

@@ -48,6 +48,7 @@
   color-scheme: light;
   --bg: var(--color-surface);
   --text: var(--color-ink);
+  --text-2: var(--color-surface);
   --header-bg: var(--color-white);
   --surface: var(--color-white); /* fond des cartes / formulaires / modales */
 }
@@ -57,7 +58,7 @@
     color-scheme: dark;
     --bg: var(--color-ink);
     --text: var(--color-surface);
-    --text-2: #767676;
+    --text-2: #fff;
     --header-bg: #0a0550;
     --surface: #0a0550;
     /* Couleur d'accent adaptative éclaircie : reste ≥7:1 sur fond Stratos/--surface foncé.
@@ -78,7 +79,7 @@
   color-scheme: dark;
   --bg: var(--color-ink);
   --text: var(--color-surface);
-  --text-2: #767676;
+  --text-2: #fff;
   --header-bg: #0a0550;
   --surface: #0a0550;
   --color-primary: #a6b0ff;
