@@ -53,7 +53,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     color-scheme: dark;
     --bg: var(--color-ink);
     --text: var(--color-surface);
@@ -70,6 +70,24 @@
     --color-error: #ff9aa2; /* éclairci pour rester ≥7:1 sur fond error-bg foncé */
     --color-error-bg: #3a0d13;
   }
+}
+
+/* Même palette sombre, forcée par le sélecteur de thème du pied de page
+   (indépendamment du réglage clair/sombre du système). */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: var(--color-ink);
+  --text: var(--color-surface);
+  --text-2: #767676;
+  --header-bg: #0a0550;
+  --surface: #0a0550;
+  --color-primary: #a6b0ff;
+  --color-primary-hover: #c2c9ff;
+  --color-primary-light: #1c1770;
+  --color-success: #8fd6a8;
+  --color-success-bg: #123822;
+  --color-error: #ff9aa2;
+  --color-error-bg: #3a0d13;
 }
 
 * { box-sizing: border-box; }
@@ -226,7 +244,25 @@ a, button, input, select, textarea, [tabindex] {
 
 section { padding-block: var(--space-4); }
 section.alt { background: var(--color-white); }
-@media (prefers-color-scheme: dark) { section.alt { background: #0a0550; } }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) section.alt { background: #0a0550; } }
+:root[data-theme="dark"] section.alt { background: #0a0550; }
+
+/* Bouton clair/sombre du pied de page */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font: inherit;
+  font-weight: 600;
+  background: transparent;
+  color: inherit;
+  border: 2px solid #cfd0ff;
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+}
+.theme-toggle:hover { background: rgba(207, 208, 255, 0.12); }
+.theme-toggle .theme-toggle-icon { font-size: 1rem; }
 
 .section-heading { text-align: center; margin-bottom: var(--space-3); }
 .section-heading p { color: var(--text); opacity: 0.85; max-width: 60ch; margin-inline: auto; }

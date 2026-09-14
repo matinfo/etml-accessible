@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Liste des erreurs — ETML Accessible</title>
 <link rel="icon" href="images/etml/etml_favicon.ico">
+<script>(function(){try{var t=localStorage.getItem('etml-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <link rel="stylesheet" href="styles/etml-theme.css">
 <style>
   table { width: 100%; border-collapse: collapse; margin-bottom: var(--space-4); background: var(--surface); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-card); }
@@ -226,7 +227,12 @@
         <li><a href="apres.html">Après</a></li>
       </ul>
     </nav>
+    <button type="button" class="theme-toggle" aria-pressed="false">
+      <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+      <span class="theme-toggle-label">Mode sombre</span>
+    </button>
   </div>
 </footer>
+<script src="scripts/etml-theme-toggle.js"></script>
 </body>
 </html>

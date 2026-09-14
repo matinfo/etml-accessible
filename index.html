@@ -6,6 +6,7 @@
 <title>ETML Accessible — Démo pédagogique WCAG</title>
 <meta name="description" content="Démonstration pédagogique comparant une interface non accessible et sa version corrigée, sur le thème de l'ETML.">
 <link rel="icon" href="images/etml/etml_favicon.ico">
+<script>(function(){try{var t=localStorage.getItem('etml-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <link rel="stylesheet" href="styles/etml-theme.css">
 <style>
   .hero-landing {
@@ -81,7 +82,12 @@
         <li><a href="erreurs.html">Liste des erreurs</a></li>
       </ul>
     </nav>
+    <button type="button" class="theme-toggle" aria-pressed="false">
+      <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+      <span class="theme-toggle-label">Mode sombre</span>
+    </button>
   </div>
 </footer>
+<script src="scripts/etml-theme-toggle.js"></script>
 </body>
 </html>
