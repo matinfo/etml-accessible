@@ -191,6 +191,16 @@ a, button, input, select, textarea, [tabindex] {
 .site-logo img { height: 30px; width: auto; }
 .site-logo .logo-text { color: var(--text); font-size: 1.1rem; }
 
+/* Logo : version foncée (par défaut, thème clair) / claire (thème sombre) selon le
+   fond de l'en-tête, qui change lui aussi avec le thème (--header-bg). */
+.site-logo .logo-dark { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .site-logo .logo-light { display: none; }
+  :root:not([data-theme="light"]) .site-logo .logo-dark { display: block; }
+}
+:root[data-theme="dark"] .site-logo .logo-light { display: none; }
+:root[data-theme="dark"] .site-logo .logo-dark { display: block; }
+
 .btn {
   display: inline-block;
   font: inherit;
